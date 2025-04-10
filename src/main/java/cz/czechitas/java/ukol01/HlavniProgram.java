@@ -12,7 +12,30 @@ public class HlavniProgram {
   public void start() {
     zofka = new Turtle();
     zofka.setPenWidth(5);
+
     drawPig();
+
+    zofka.setX(100);
+    zofka.setY(100);
+    zofka.turnRight(90);
+
+    drawOctagon();
+
+    // Could be probably optimized, but I am not sure how
+    zofka.turnRight(180);
+    zofka.penUp();
+    zofka.move(25);
+    zofka.turnLeft(90);
+    zofka.move(80);
+    zofka.penDown();
+
+    drawCircle();
+
+    zofka.penUp();
+    zofka.move(120);
+    zofka.penDown();
+
+    drawSun();
   }
 
   public void drawHouse() {
@@ -58,6 +81,39 @@ public class HlavniProgram {
     drawLeg();
 
     zofka.turnLeft(45);
+  }
+
+  public void drawOctagon() {
+    for (int i = 0; i < 8; i++) {
+      zofka.move(30);
+      zofka.turnLeft(45);
+    }
+  }
+
+  public void drawCircle() {
+    for (int i = 0; i < 120; i++) {
+      zofka.move(2);
+      zofka.turnLeft(3); // 360/120
+    }
+  }
+
+  public void drawSunRay() {
+    zofka.turnRight(90);
+    zofka.move(20);
+    zofka.turnRight(180);
+    zofka.move(20);
+    zofka.turnRight(90);
+    for (int i = 0; i < 10; i++) {
+      zofka.turnLeft(3); // 360/120
+      zofka.move(2);
+    }
+  }
+
+  public void drawSun() {
+    drawCircle();
+    for (int i = 0; i < 12; i++) {
+      drawSunRay();
+    }
   }
 
 }
