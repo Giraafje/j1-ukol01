@@ -57,9 +57,9 @@ public class HlavniProgram {
     zofka.setY(60);
     zofka.turnRight(90);
 
-    // Octagon and circle are not supposed to be part of the result picture
+//    Octagon and circle are not supposed to be part of the result picture
 //    drawOctagon();
-
+//
 //    zofka.turnRight(180);
 //    zofka.penUp();
 //    zofka.move(25);
@@ -74,6 +74,16 @@ public class HlavniProgram {
 //    zofka.penDown();
 
     drawSun();
+
+    zofka.setX(100);
+    zofka.setY(400);
+    zofka.turnLeft(90);
+
+    drawL();
+    drawE();
+    drawN();
+    drawK();
+    drawA();
   }
 
   public void drawHouse() {
@@ -121,19 +131,19 @@ public class HlavniProgram {
     zofka.turnLeft(45);
   }
 
-  public void drawOctagon() {
-    for (int i = 0; i < 8; i++) {
-      zofka.move(30);
-      zofka.turnLeft(45);
-    }
-  }
+//  public void drawOctagon() {
+//    for (int i = 0; i < 8; i++) {
+//      zofka.move(30);
+//      zofka.turnLeft(45);
+//    }
+//  }
 
-  public void drawCircle() {
-    for (int i = 0; i < 120; i++) {
-      zofka.move(1); // making the sun a bit smaller
-      zofka.turnLeft(3); // 360/120
-    }
-  }
+//  public void drawCircle() {
+//    for (int i = 0; i < 120; i++) {
+//      zofka.move(2); // making the sun a bit smaller
+//      zofka.turnLeft(3); // 360/120
+//    }
+//  }
 
   public void drawSunRay() {
     zofka.turnRight(90);
@@ -148,10 +158,91 @@ public class HlavniProgram {
   }
 
   public void drawSun() {
-    drawCircle();
     for (int i = 0; i < 12; i++) {
       drawSunRay();
     }
+  }
+
+  public void twiceMoveAndTurnLeft() {
+    for (int i = 0; i < 2; i++) {
+      zofka.move(25);
+      zofka.turnLeft(90);
+    }
+  }
+
+  public void makeSpace() {
+    zofka.penUp();
+    zofka.move(50);
+    zofka.turnLeft(90);
+    zofka.penDown();
+  }
+
+  public void drawL() {
+    zofka.move(50);
+    zofka.turnLeft(180);
+    zofka.move(50);
+    zofka.turnLeft(90);
+    zofka.move(25);
+    makeSpace();
+  }
+
+  public void drawE() {
+    zofka.move(50);
+    zofka.turnRight(90);
+    zofka.move(25);
+    zofka.turnLeft(180);
+    twiceMoveAndTurnLeft();
+    zofka.move(25);
+    zofka.turnLeft(180);
+    twiceMoveAndTurnLeft();
+    zofka.move(25);
+    makeSpace();
+  }
+
+  public void drawN() {
+    zofka.move(50);
+    zofka.turnRight(150);
+    zofka.move(60);
+    zofka.turnLeft(150);
+    zofka.move(50);
+    zofka.turnLeft(180);
+    zofka.move(50);
+    zofka.turnLeft(90);
+    makeSpace();
+  }
+
+  public void drawK() {
+    zofka.move(50);
+    zofka.turnRight(180);
+    zofka.move(25);
+    zofka.turnLeft(135);
+    zofka.move(35);
+    zofka.turnLeft(180);
+    zofka.move(35);
+    zofka.turnLeft(90);
+    zofka.move(35);
+    zofka.turnLeft(45);
+    makeSpace();
+  }
+
+  public void drawA() {
+    zofka.turnRight(25);
+    zofka.move(60);
+    zofka.turnRight(135);
+    zofka.move(60);
+    zofka.turnRight(110);
+    zofka.penUp();
+    zofka.move(50);
+    zofka.turnRight(115);
+    zofka.move(30);
+    zofka.turnRight(65);
+    zofka.penDown();
+    zofka.move(30);
+    zofka.turnRight(65);
+    zofka.penUp();
+    zofka.move(30);
+    zofka.turnLeft(65);
+    makeSpace();
   }
 
 }
