@@ -13,27 +13,65 @@ public class HlavniProgram {
     zofka = new Turtle();
     zofka.setPenWidth(5);
 
+    // Moving the piglet a bit down to gain more space for the houses
+    zofka.turnRight(180);
+    zofka.penUp();
+    zofka.move(50);
+    zofka.turnRight(180);
+    zofka.penDown();
+
     drawPig();
 
     zofka.setX(100);
-    zofka.setY(100);
     zofka.turnRight(90);
 
-    drawOctagon();
-
-    // Could be probably optimized, but I am not sure how
-    zofka.turnRight(180);
-    zofka.penUp();
-    zofka.move(25);
-    zofka.turnLeft(90);
-    zofka.move(80);
-    zofka.penDown();
-
-    drawCircle();
+    drawHouse();
 
     zofka.penUp();
     zofka.move(120);
+    zofka.turnLeft(90);
+    zofka.move(50);
+    zofka.turnRight(90);
     zofka.penDown();
+
+    for (int i = 0; i < 5; i++) {
+      drawHouse();
+      zofka.turnRight(90);
+      zofka.penUp();
+      zofka.move(100);
+      zofka.turnLeft(90);
+      zofka.penDown();
+    }
+
+    zofka.turnLeft(90);
+    zofka.penUp();
+    zofka.move(150);
+    zofka.turnLeft(90);
+    zofka.move(120);
+    zofka.turnRight(180);
+    zofka.penDown();
+
+    drawHouse();
+
+    zofka.setX(200);
+    zofka.setY(60);
+    zofka.turnRight(90);
+
+    // Octagon and circle are not supposed to be part of the result picture
+//    drawOctagon();
+
+//    zofka.turnRight(180);
+//    zofka.penUp();
+//    zofka.move(25);
+//    zofka.turnLeft(90);
+//    zofka.move(80);
+//    zofka.penDown();
+//
+//    drawCircle();
+//
+//    zofka.penUp();
+//    zofka.move(120);
+//    zofka.penDown();
 
     drawSun();
   }
@@ -92,7 +130,7 @@ public class HlavniProgram {
 
   public void drawCircle() {
     for (int i = 0; i < 120; i++) {
-      zofka.move(2);
+      zofka.move(1); // making the sun a bit smaller
       zofka.turnLeft(3); // 360/120
     }
   }
@@ -105,7 +143,7 @@ public class HlavniProgram {
     zofka.turnRight(90);
     for (int i = 0; i < 10; i++) {
       zofka.turnLeft(3); // 360/120
-      zofka.move(2);
+      zofka.move(1); // making the sun a bit smaller
     }
   }
 
