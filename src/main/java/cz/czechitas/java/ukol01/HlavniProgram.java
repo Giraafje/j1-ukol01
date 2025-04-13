@@ -140,7 +140,7 @@ public class HlavniProgram {
 
 //  public void drawCircle() {
 //    for (int i = 0; i < 120; i++) {
-//      zofka.move(2); // making the sun a bit smaller
+//      zofka.move(2);
 //      zofka.turnLeft(3); // 360/120
 //    }
 //  }
@@ -152,7 +152,7 @@ public class HlavniProgram {
     zofka.move(20);
     zofka.turnRight(90);
     for (int i = 0; i < 10; i++) {
-      zofka.turnLeft(3); // 360/120
+      zofka.turnLeft(3);
       zofka.move(1); // making the sun a bit smaller
     }
   }
