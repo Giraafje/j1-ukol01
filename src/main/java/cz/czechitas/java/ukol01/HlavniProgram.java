@@ -13,49 +13,38 @@ public class HlavniProgram {
     zofka = new Turtle();
     zofka.setPenWidth(5);
 
-    // Moving the piglet a bit down to gain more space for the houses
-    zofka.turnRight(180);
-    zofka.penUp();
-    zofka.move(50);
-    zofka.turnRight(180);
-    zofka.penDown();
+    zofka.setX(200);
+    zofka.setY(50);
 
-    drawPig();
+    drawSun();
 
     zofka.setX(100);
-    zofka.turnRight(90);
+    zofka.setY(200);
 
-    drawHouse();
-
-    zofka.penUp();
-    zofka.move(120);
-    zofka.turnLeft(90);
-    zofka.move(50);
-    zofka.turnRight(90);
-    zofka.penDown();
-
+    double zofkaX = zofka.getX();
     for (int i = 0; i < 5; i++) {
       drawHouse();
-      zofka.turnRight(90);
-      zofka.penUp();
-      zofka.move(100);
-      zofka.turnLeft(90);
-      zofka.penDown();
+      zofkaX += 100;
+      zofka.setX(zofkaX);
     }
 
-    zofka.turnLeft(90);
-    zofka.penUp();
-    zofka.move(150);
-    zofka.turnLeft(90);
-    zofka.move(120);
-    zofka.turnRight(180);
-    zofka.penDown();
+    zofka.setX(100);
+    zofka.setY(300);
 
     drawHouse();
+    zofka.setX(350);
+    drawPig();
+    zofka.setX(500);
+    drawHouse();
 
-    zofka.setX(200);
-    zofka.setY(60);
-    zofka.turnRight(90);
+    zofka.setX(100);
+    zofka.setY(400);
+
+    drawL();
+    drawE();
+    drawN();
+    drawK();
+    drawA();
 
 //    Octagon and circle are not supposed to be part of the result picture
 //    drawOctagon();
@@ -72,21 +61,12 @@ public class HlavniProgram {
 //    zofka.penUp();
 //    zofka.move(120);
 //    zofka.penDown();
-
-    drawSun();
-
-    zofka.setX(100);
-    zofka.setY(400);
-    zofka.turnLeft(90);
-
-    drawL();
-    drawE();
-    drawN();
-    drawK();
-    drawA();
+//
   }
 
   public void drawHouse() {
+    double initialPositionX = zofka.getX();
+    double initialPositionY = zofka.getY();
     for (int i = 0; i < 4; i++) {
       zofka.move(50);
       zofka.turnRight(90);
@@ -99,6 +79,8 @@ public class HlavniProgram {
     zofka.turnRight(45);
     zofka.move(50);
     zofka.turnRight(180);
+    zofka.setX(initialPositionX);
+    zofka.setY(initialPositionY);
   }
 
   public void drawLeg() {
@@ -111,7 +93,6 @@ public class HlavniProgram {
     zofka.turnLeft(90);
     drawHouse();
     zofka.turnLeft(90);
-    zofka.move(50);
 
     // legs on the left side
     zofka.turnLeft(45);
@@ -129,6 +110,7 @@ public class HlavniProgram {
     drawLeg();
 
     zofka.turnLeft(45);
+    zofka.turnRight(90);
   }
 
 //  public void drawOctagon() {
